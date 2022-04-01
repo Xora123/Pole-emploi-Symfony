@@ -41,7 +41,7 @@ class PostController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
     
             $em->flush();
-            return $this->redirectToRoute('app_home');
+            return $this->redirectToRoute('app_home'));
         }
         return $this->render('post/edit.html.twig', [
             'form' => $form->createView(),

@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Post;
-use App\Form\PostType;
 use App\Form\PostFormType;
 use App\Repository\PostRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -37,15 +36,8 @@ class PostController extends AbstractController
     {
         $form = $this->createForm(PostType::class, $post);
         $form->handleRequest($request);
-
-        if($form->isSubmitted() && $form->isValid()){
-    
-            $em->flush();
-            return $this->redirectToRoute('app_home');
-        }
         return $this->render('post/edit.html.twig', [
-            'form' => $form->createView(),
-
+            'form' => $form->createView()
         ]);
     }
 }
