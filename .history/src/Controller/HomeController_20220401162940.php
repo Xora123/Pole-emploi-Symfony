@@ -20,7 +20,7 @@ class HomeController extends AbstractController
         $posts = $paginator->paginate(
             $posts, /* query NOT result */
             $request->query->getInt('page', 1)/*page number*/,
-            3/*limit per page*/
+            2/*limit per page*/
         );
 
         return $this->render('home/index.html.twig', [

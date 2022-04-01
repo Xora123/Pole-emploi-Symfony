@@ -18,9 +18,9 @@ class HomeController extends AbstractController
         $posts = $postRepository->findBy([],['createdAt' => 'desc']);
 
         $posts = $paginator->paginate(
-            $posts, /* query NOT result */
+            $queryBuilder, /* query NOT result */
             $request->query->getInt('page', 1)/*page number*/,
-            3/*limit per page*/
+            10/*limit per page*/
         );
 
         return $this->render('home/index.html.twig', [
