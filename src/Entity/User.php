@@ -42,6 +42,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $this->posts = new ArrayCollection();
         $this->reponses = new ArrayCollection();
+        
     }
 
     public function getId(): ?int
