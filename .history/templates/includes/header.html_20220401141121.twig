@@ -1,0 +1,22 @@
+<body>
+{% for post in posts %}
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+				<div class="col p-4 d-flex flex-column position-static">
+					<strong class="d-flexblock mb-2 text-success">{{ post.type }} type</strong>
+          <p class="d-flex mb-10 text-success">{{ post.type }} type </p>
+					<h3 class="mb-0">{{ post.title }}titre</h3>
+					<div class="mb-1 text-muted">{{ post.createdAt }}date</div>
+					<p class="mb-auto">{{ post.content }}contenu</p>
+					<a href="#" class="stretched-link">Continue reading</a>
+				</div>
+				<div class="col-auto d-none d-lg-block">
+				</div>
+			</div>
+		</div>
+    </div>
+	</div>
+  {% endfor %}
+</body></div></div><footer class="blog-footer"><p>
+<a href="#">Back to top</a></p></footer></body>
