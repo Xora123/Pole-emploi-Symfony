@@ -1,5 +1,7 @@
-<body>
-	{% for post in posts %}
+{% extends 'base.html.twig' %}
+{% block body %}
+	<body>
+
 
 		<div class="col-md-12">
 			<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -14,11 +16,12 @@
 					<h3 class="mb-0">{{ post.title }}titre</h3>
 					<div class="mb-1 text-muted">{{ post.createdAt }}date</div>
 					<p class="mb-auto">{{ post.content }}contenu</p>
-          <div class="mb-1 text-muted">{{ post.departement }} departement</div>
-					<a href="{{ path('app_post', {'id':post.id} )}}" class="stretched-link">Continue reading</a>
+					<div class="mb-1 text-muted">{{ post.departement }}
+						departement</div>
+					<a href="{{ path('app_home' )}}" class="stretched-link">Continue reading</a>
 				</div>
 				<div class="col-auto d-none d-lg-block"></div>
 			</div>
 		</div>
-	</div>
-</body></div>{% endfor %}</body></div></div><footer class="blog-footer"><p><a href="#">Back to top</a></p></footer></body>
+	</body>
+</div></body></div></body></div></div><footer class="blog-footer"><p><a href="#">Back to top</a></p></footer></body>{% endblock %}
