@@ -12,8 +12,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
-    #[Route('/home', name: 'app_home')]
-    public function index(PostRepository $postRepository, PaginatorInterface $paginator, Request $request): Response
+
+    #[Route('/', name: 'app_home')]
+    public function index(PostRepository $postRepository): Response
     {
         $posts = $postRepository->findBy([],['createdAt' => 'desc']);
 
