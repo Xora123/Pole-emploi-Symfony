@@ -21,7 +21,7 @@ class PostFixtures extends Fixture
 
             $post = new Post();
             $post->setTitle($faker->text(50));
-            $post->setCreatedAt(DateTimeImmutable::createFromMutable($faker->dateTimeBetween('-1 years', 'now')));
+            $post->setCreatedAt(DateTimeImmutable::createFromMutable($faker->dateTime('d_m_Y H:i:s')));
             $post->setDepartement(($faker->word()));
             $post->setZipCode(str_replace(' ', '', $faker->postcode()));
             $post->setContent($faker->text(200));
