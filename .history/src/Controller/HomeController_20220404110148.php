@@ -32,7 +32,7 @@ class HomeController extends AbstractController
         ]);
     }
     #[Route("/create", name: 'app_create', methods: ['GET', 'POST'])]
-    public function create(EntityManagerInterface $em, Request $request) : Response
+    public function create(Post $post,EntityManagerInterface $em, Request $request) : Response
     {
         $post = new Post();
 
