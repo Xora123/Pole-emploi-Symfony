@@ -24,10 +24,7 @@ class PostType extends AbstractType
                     'expanded' => true,
                     'choices' => [
                         'cdd' => 'cdd',
-                        'cdi' => 'cdi',
-                        'stage' => 'stage',
-                        'alternance' => 'alternance',
-                        'interim' => 'interim'
+                        'cdi' => 'blabla'
                     ]
             ])
             ->add('salaire')

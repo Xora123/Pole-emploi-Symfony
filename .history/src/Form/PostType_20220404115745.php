@@ -21,13 +21,11 @@ class PostType extends AbstractType
             ->add('zip_code')
             ->add('content')
             ->add('type', ChoiceType::class, [
+                    'multiple' => true,
                     'expanded' => true,
                     'choices' => [
-                        'cdd' => 'cdd',
-                        'cdi' => 'cdi',
-                        'stage' => 'stage',
-                        'alternance' => 'alternance',
-                        'interim' => 'interim'
+                        'salut' => 'salut',
+                        'blabla' => 'blabla'
                     ]
             ])
             ->add('salaire')
