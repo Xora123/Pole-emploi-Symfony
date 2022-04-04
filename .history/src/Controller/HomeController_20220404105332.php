@@ -31,12 +31,12 @@ class HomeController extends AbstractController
             'posts' => $posts
         ]);
     }
+
     #[Route("/create", name: 'app_create', methods: ['GET', 'POST'])]
-    public function create(EntityManagerInterface $em, Request $request) : Response
+    public function create(EntityManagerInterface $em, Request $request, Post $post, PostRepository $postRepository) : Response
     {
         $post = new Post();
-
-        $form = $this->createForm(PostType::class, $post);
+        $form = $this->createForm(PostType::class);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
@@ -45,7 +45,8 @@ class HomeController extends AbstractController
             $em->flush();
             return $this->redirectToRoute('app_home');
         }
-        return $this->render('post/create.html.twig', [
+        return $this->render('post/edit.html.twig', [
+            'post' => $post,
             'form' => $form->createView()
         ]);
     }
