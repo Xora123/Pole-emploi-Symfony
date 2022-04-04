@@ -1,16 +1,17 @@
 <div class="container">
-        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-                <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                        <img src="{{ asset('images/logo.svg') }}" alt="logo pole emploi"/>
+	<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+		<a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+			
+                        <img src="{{ asset('images/logo.svg') }}" class="img-rounded" width="75%"  alt="logo pole emploi"/>
 
-                            <a href="{{ path('app_home') }}" class="nav-link px-2 link-dark">Accueil</a>
+			<a href="{{ path('app_home') }}" class="label label-default">Accueil</span></a>
 
-                            <div class="col-md-7 text-end">
-                                <a type="button" class="btn btn-outline-primary me-2" href="{{ path('app_login') }}">Se connecter</a>
-                                <a type="button" class="btn btn-primary" href="{{ path('app_register') }} ">S'inscrire</a>
-                                <a type="button" class="btn btn-primary" href="{{ path('app_logout') }} ">Se déconnecter</a>
-                                <a type="button" class="btn btn-outline-primary me-2" href="{{ path('app_create') }} ">Ajouter une offre</a>
-                            </div>
-                </a>
-        </header>
+			<div class="col-md-7 text-end">
+				<a type="button" class="btn btn-outline-primary me-2" href="{{ path('app_login') }}">Se connecter</a>
+				<a type="button" class="btn btn-primary" href="{{ path('app_register') }} ">S'inscrire</a>
+				<a type="button" class="btn btn-primary" href="{{ path('app_logout') }} ">Se déconnecter</a>
+				<a type="button" class="btn btn-outline-primary me-2" href="{{ path('app_create') }} ">Ajouter une offre</a>
+			</div>
+		</a>
+	</header>
 </div>
