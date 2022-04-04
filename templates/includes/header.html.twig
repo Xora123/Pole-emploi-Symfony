@@ -1,4 +1,11 @@
 <body>
+
+
+	{{form_start(forms)}}
+	{{form_widget(forms)}}
+	<button type="submit">Submit</button>
+	{{form_end(forms)}}
+
 	{% for post in posts %}
 
 		<div class="col-md-12">
