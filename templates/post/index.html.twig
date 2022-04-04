@@ -1,32 +1,38 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-	<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
 
 
-		<div class="col-md-12">
-			<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
 				<div class="col p-4 d-flex flex-column">
-					<div class="d-flex justify-content-between">
-						<strong class="p-2">{{ post.type }}
-							type</strong>
-						<p class="p-2">{{ post.duree }}
-							durée
-						</p>
+
+
+					<div class="d-flex justify-content-end">
+						<strong class="p-2">{#type:cdd/cdi#}{{ post.type }}</strong>
+						<p class="p-2">{#type de contrat#}{{ post.duree }}</p>
 					</div>
-					<h3 class="mb-0">{{ post.title }}titre</h3>
 
 
-					<div class="mb-1 text-muted">{{ post.createdAt|date("m/d/Y") }}</div>
+					<h1 class="mb">{#titre du post#}{{ post.title }}</h1>
 
-					<p class="mb-auto">{{ post.content }}contenu</p>
-					<div class="mb-1 text-muted">{{ post.departement }}
-						departement</div>
-					<a href="{{ path('app_home')}}" class="stretched-link">Page d'Acceuil</a>
-					<a href="{{ path('app_delete', {'id':post.id} )}}" class="stretched-link">Supprimer l'annonce</a>
-						<a href="{{ path('app_edit', {'id':post.id} )}}" class="stretched-link">Modifié l'annonce</a>
-				</div>
-				<div class="col-auto d-none d-lg-block"></div>
+					<h2 class="mb-1 text my-2">Ville:{{ post.departement }}</h2>
+
+					<p class="mb-auto">{{ post.content }}</p>
+
+					<p class="mb-1 my-2 ">{{ post.createdAt|date("m/d/Y") }}</p>
+
+					<div class="d-flex justify-content-start my-2">
+						<a href="{{ path('app_delete', {'id': post.id}) }}" class="btn btn-outline-primary me-2">Modifier</a>
+						<a href="{{ path('app_edit', {'id': post.id}) }}" class="btn btn-primary me-1">Supprimer</a>
+					</div>
+
+				<a href="{{ path('app_home')}}" class="stretched-link mx-3">Retour Accueil</a>
+				<a href="#">Haut de page</a>
+
+
 			</div>
 		</div>
-	</body>
-</div></body></div></body></div></div><footer class="blog-footer"><p><a href="#">Back to top</a></p></footer></body>{% endblock %}
+	</div>
+{% endblock %}
