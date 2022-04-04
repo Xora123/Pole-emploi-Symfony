@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+
+
+				<div class="col p-4 d-flex flex-column">
+
+
+					<div class="d-flex justify-content-end">
+						<strong class="p-2">{#type:cdd/cdi#}{{ post.type }}</strong>
+						<p class="p-2">{#type de contrat#}{{ post.duree }}</p>
+					</div>
+
+
+					<h1 class="mb">{#titre du post#}{{ post.title }}</h1>
+
+					<h2 class="mb-1 text my-2">Ville:{{ post.departement }}</h2>
+
+					<p class="mb-auto">{{ post.content }}</p>
+
+					<p class="mb-1 my-2 ">{{ post.createdAt|date("m/d/Y") }}</p>
+
+					<div class="d-flex justify-content-start my-2">
+						<a href="{{ path('app_edit', {'id': post.id}) }}" class="btn btn-outline-primary me-2">Modifier</a>
+						<a href="{{ path('app_delete', {'id': post.id}) }}" class="btn btn-primary me-1">Supprimer</a>
+					</div>
+<a href="{{ path('app_post', {'id':post.id} )}}" class="stretched-link">Continue reading</a>
+				<a href="#">Haut de page</a>
+
+
+			</div>
+		</div>
+	</div>
+{% endblock %}
