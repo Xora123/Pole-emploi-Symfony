@@ -26,12 +26,11 @@
 			</li>
 		</ul>
 
-		<div class="col-md-5 text-end">
-			<a type="button" class="btn btn-outline-primary me-2" href = "{{ path('app_login') }}" >Se connecter</a>
-			<a type="button" class="btn btn-primary" href="{{ path('app_register') }} " >S'inscrire</a>
-			<a type="button" class="btn btn-primary" href="{{ path('app_logout') }} " >Se déconnecter</a>
-			<a type="button" class="btn btn-outline-primary me-2" href = "{{ path('app_create') }}" >Ajouter une offre</a>
-
+		<div class="col-md-3 text-end">
+			<a type="button" class="btn btn-outline-primary me-2" href="{{ path('app_login') }}">Ajouter une offre</a>
+			<a type="button" class="btn btn-outline-primary me-2" href="{{ path('app_login') }}">Se connecter</a>
+			<a type="button" class="btn btn-primary" href="{{ path('app_register') }} ">S'inscrire</a>
+			<a type="button" class="btn btn-primary" href="{{ path('app_logout') }} ">Se déconnecter</a>
 		</div>
 	</header>
 </div>

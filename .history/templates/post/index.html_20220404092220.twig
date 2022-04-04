@@ -8,12 +8,12 @@
 				<div class="col p-4 d-flex flex-column">
 					<div class="d-flex justify-content-between">
 						<strong class="p-2">{{ post.type }}
-							</strong>
+							type</strong>
 						<p class="p-2">{{ post.duree }}
 							durée
 						</p>
 					</div>
-					<h3 class="mb-0">{{ post.title }}</h3>
+					<h3 class="mb-0">{{ post.title }}titre</h3>
 
 
 					<div class="mb-1 text-muted">{{ post.createdAt|date("m/d/Y") }}</div>
@@ -21,12 +21,12 @@
 					<p class="mb-auto">{{ post.content }}contenu</p>
 					<div class="mb-1 text-muted">{{ post.departement }}
 						departement</div>
-					<a href="{{ path('app_home')}}" class="">Page d'Acceuil</a>
-					<a href="{{ path('app_delete', {'id':post.id} )}}" class="">Supprimer l'annonce</a>
-						<a href="{{ path('app_edit', {'id':post.id} )}}" class="">Modifié l'annonce</a>
+					<a href="{{ path('app_delete', {'id':post.id} )}}" class="stretched-link">Supprimer l'annonce</a>
+					<a href="{{ path('app_edit', {'id':post.id} )}}" class="stretched-link">Modifié l'annonce</a>
 				</div>
 				<div class="col-auto d-none d-lg-block"></div>
 			</div>
 		</div>
+					<a href="{{ path('app_home')" class="stretched-link">Page d'Accezaeazezaeuil</a>
 	</body>
 </div></body></div></body></div></div><footer class="blog-footer"><p><a href="#">Back to top</a></p></footer></body>{% endblock %}
