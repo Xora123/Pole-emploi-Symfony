@@ -1,6 +1,8 @@
+
 {% block body %}
 
     <img src=" {{ asset('images/header_pole-emploi.jpg') }}" alt="fond 'image pole emploi"  >
+
 
 
     {% for post in posts %}
@@ -17,6 +19,7 @@
                     </div>
                     <h3 class="mb-0">{{ post.title }}titre</h3>
 
+
                     <div class="mb-1 text-muted">{{ post.createdAt|date("m/d/Y") }}</div>
                     <p class="mb-auto">{{ post.content }}contenu</p>
                     <div class="mb-1 text-muted">{{ post.departement }}</div>
@@ -27,6 +30,8 @@
 
             </div>
         </div>
+
+
 
 
     {% endfor %}
