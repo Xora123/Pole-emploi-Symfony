@@ -6,9 +6,7 @@ use App\Entity\Post;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class PostType extends AbstractType
 {
@@ -20,15 +18,11 @@ class PostType extends AbstractType
             ->add('departement')
             ->add('zip_code')
             ->add('content')
-            ->add('type', ChoiceType::class, [
-                    'expanded' => true,
-                    'choices' => [
-                        'cdd' => 'cdd',
-                        'cdi' => 'cdi',
-                        'stage' => 'stage',
-                        'alternance' => 'alternance',
-                        'interim' => 'interim'
-                    ]
+            ->add('categories', EntityType::class, [
+                'class' => categories::class,
+                'choice_label' => 'label',
+                'multiple' => true,
+                'expanded' => false
             ])
             ->add('salaire')
             ->add('duree')
