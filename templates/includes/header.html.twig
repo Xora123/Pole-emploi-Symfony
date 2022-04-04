@@ -12,14 +12,19 @@
 						</p>
 					</div>
 					<h3 class="mb-0">{{ post.title }}titre</h3>
-					<div class="mb-1 text-muted">{{ post.createdAt|date("m/d/Y") }}date</div>
+
+					<div class="mb-1 text-muted">{{ post.createdAt|date("m/d/Y") }}</div>
 					<p class="mb-auto">{{ post.content }}contenu</p>
-					<div class="mb-1 text-muted">{{ post.departement }}
-						departement</div>
+					<div class="mb-1 text-muted">{{ post.departement }}</div>
+
 					<a href="{{ path('app_post', {'id':post.id} )}}" class="stretched-link">Continue reading</a>
 				</div>
 				<div class="col-auto d-none d-lg-block"></div>
+				
 			</div>
 		</div>
 	</div>
-</body></div>{% endfor %}</body></div></div><footer class="blog-footer"><p><a href="#">Back to top</a></p></footer></body>
+
+</body>
+</div>{% endfor %}
+	{{ knp_pagination_render(posts) }}</body></div></div><footer class="blog-footer"><p><a href="#">Back to top</a></p></footer></body>

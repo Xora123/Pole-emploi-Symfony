@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use Faker;
+use Faker\Factory;
 use App\Entity\Post;
 use DateTimeImmutable;
 use Doctrine\Persistence\ObjectManager;
