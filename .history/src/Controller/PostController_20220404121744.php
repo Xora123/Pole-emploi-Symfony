@@ -35,7 +35,7 @@ class PostController extends AbstractController
     #[Route("post/{id}/edit", name: 'app_edit', methods: ['GET', 'POST'])]
     public function edit(Post $post, Request $request, EntityManagerInterface $em): Response
     {
-        $form = $this->createForm(PostType::class, $post);
+        $form = $this->createForm(Post::class, $post);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -45,7 +45,8 @@ class PostController extends AbstractController
             return $this->redirectToRoute('app_home');
         }
         return $this->render('post/edit.html.twig', [
-            'form' => $form->createView()
+            'form' => $form->createView(),
+
         ]);
     }
 }
