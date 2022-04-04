@@ -9,17 +9,17 @@
 		<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
 			<div class="col p-4 d-flex flex-column">
 				<div class="d-flex justify-content-between">
-					<strong class="p-2">Type : {{ post.type }}</strong>
+					<strong class="p-2">{{ post.type }}</strong>
 					<p class="p-2">durée :
 						{{ post.duree }}
 						mois</p>
 				</div>
 				<h3 class="mb-0">{{ post.title }}</h3>
 
+				<div class="mb-1 text-muted">{{ post.createdAt|date("m/d/Y") }}</div>
 				<p class="mb-auto">{{ post.content }}</p>
 				<div class="mb-1 text-muted">{{ post.departement }}</div>
 
-				<div class="mb-1 text-muted">Date de publication : {{ post.createdAt|date("m/d/Y") }}</div>
 				<a href="{{ path('app_post', {'id':post.id} )}}" class="stretched-link">Continue reading</a>
 			</div>
 			<div class="col-auto d-none d-lg-block"></div>
