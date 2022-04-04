@@ -9,10 +9,8 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 
 class PostType extends AbstractType
@@ -20,7 +18,6 @@ class PostType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-
             ->add('title', TextType::class, [
                 'attr' => [
                     'class' => 'form-control',
@@ -45,7 +42,6 @@ class PostType extends AbstractType
                 ],
                 'label' => 'content',
             ])
-
             ->add('type', ChoiceType::class, [
                 'expanded' => true,
                 'choices' => [
