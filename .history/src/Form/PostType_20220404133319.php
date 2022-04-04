@@ -18,6 +18,7 @@ class PostType extends AbstractType
     {
         $builder
             ->add('title')
+            ->add('createdAt', da)
             ->add('departement')
             ->add('zip_code')
             ->add('content')
