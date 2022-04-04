@@ -1,3 +1,5 @@
+
+
 {% block body  %}
 
 <img src=" {{ asset('images/header_pole-emploi.jpg') }}" alt="cherche un emploi">
@@ -14,6 +16,7 @@
 					<p class="p-2">{{ post.duree }}
 						durée
 					</p>
+>>>>>>> 7473daf653269b9442f60e88ca5e8ce244af68d3
 				</div>
 				<h3 class="mb-0">{{ post.title }}titre</h3>
 
@@ -28,8 +31,16 @@
 		</div>
 	</div>
 
-</div>{% endfor %}<footer
-class="blog-footer mx-4 my-3">
+</div>
+{% endfor %}
+
+
+
+
+
+<footer class="blog-footer mx-4 my-3" >
 {#pagination#}
 {{ knp_pagination_render(posts) }}
-<a href="#">Retour en haut de page</a></footer>{% endblock %}
+<a href="#">Retour en haut de page</a>
+</footer>{% endblock %}
+
