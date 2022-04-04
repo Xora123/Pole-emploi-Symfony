@@ -1,6 +1,10 @@
 {% block body %}
 
-	<img src=" {{ asset('images/header_pole-emploi.jpg') }}" alt="fond 'image pole emploi">
+
+	<img src=" {{ asset('images/header_pole-emploi.jpg') }}" alt="fond 'image pole emploi" width="100%" height="700">
+
+
+
 
 
 	{% for post in posts %}
@@ -16,11 +20,27 @@
 					<h3 class="mb-0">{{ post.title }}</h3>
 
 
-					<div class="mb-1 text-muted">{{ post.createdAt|date("m/d/Y") }}</div>
-					<p class="mb-auto">{{ post.content }}</p>
-					<div class="mb-1 text-muted">{{ post.departement }}</div>
+		<div class="col-md-12">
+			<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+				<div class="col p-4 d-flex flex-column">
+					<div class="d-flex justify-content-between">
+						<strong class="p-2">{{ post.type }}
+							type</strong>
+						<p class="p-2">{{ post.duree }}
+							durée
+						</p>
+					</div>
+					<h3 class="mb-0">
+						<ins>{{ post.title }}titre</ins>
+					</h3>
 
-					<a href="{{ path('app_post', {'id':post.id} ) }}" class="stretched-link">Continue reading</a>
+					<div class="mb-1 text-muted">
+						Date de publication{{ post.createdAt|date("m/d/Y") }}</div>
+					<p class="mb-auto">{{ post.content }}contenu</p><br>
+					<div class="mb-1 text">Département:{{ post.departement }}</div>
+
+					<a href="{{ path('app_post', {'id':post.id} ) }}" class="stretched-link">En savoir plus</a>
+
 				</div>
 				<div class="col-auto d-none d-lg-block"></div>
 
