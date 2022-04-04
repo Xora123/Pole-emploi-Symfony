@@ -24,7 +24,7 @@ class PostType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Titre',
+                'label' => 'title',
             ])
             ->add('departement', TextType::class, [
                 'attr' => [

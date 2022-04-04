@@ -5,7 +5,7 @@
 
 	{% for post in posts %}
 
-		<div class="col-md-8 p-1">
+		<div class="col-10">
 			<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
 				<div class="col p-4 d-flex flex-column">
 					<h3 class="mb-0">{{ post.title }}</h3>
@@ -17,21 +17,18 @@
 						<p class="mb-auto">{{ post.content }}</p>
 						<p class="">{{ post.type }}</p>
 					</div>
-					<div class="mb-1 text-muted">
-						Publié le
-						{{ post.createdAt|date("m/d/Y") }}</div>
+				<div class="mb-1 text-muted"> Publié le  {{ post.createdAt|date("m/d/Y") }}</div>
 					<a href="{{ path('app_post', {'id':post.id} ) }}" class="stretched-link">Continue reading</a>
 				</div>
 				<div class="col-auto d-none d-lg-block"></div>
 			</div>
-		</div>
-	{% endfor %}
+		{% endfor %}
 
 
-	<footer
-		class="blog-footer mx-4 my-3">
-		{# pagination #}
-		{{ knp_pagination_render(posts) }}
-		<a href="#">Retour en haut de page</a>
-	</footer>
-{% endblock %}
+		<footer
+			class="blog-footer mx-4 my-3">
+			{# pagination #}
+			{{ knp_pagination_render(posts) }}
+			<a href="#">Retour en haut de page</a>
+		</footer>
+	{% endblock %}

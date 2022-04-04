@@ -24,7 +24,7 @@ class PostType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Titre',
+                'label' => 'title',
             ])
             ->add('departement', TextType::class, [
                 'attr' => [
@@ -36,22 +36,22 @@ class PostType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Code postal',
+                'label' => 'zip_code',
             ])
             ->add('content', TextareaType::class, [
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Contenue du poste',
+                'label' => 'content',
             ])
             ->add('type', ChoiceType::class, [
                 'expanded' => true,
                 'choices' => [
                     'cdd' => 'CDD',
                     'cdi' => 'CDI',
-                    'stage' => 'Stage',
-                    'alternance' => 'Alternance',
-                    'interim' => 'Interim'
+                    'stage' => 'STAGE',
+                    'alternance' => 'alternance',
+                    'interim' => 'interim'
                 ]
             ])
             ->add('salaire', NumberType::class, [
