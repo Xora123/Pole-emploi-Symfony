@@ -18,7 +18,8 @@ class Post
     #[ORM\Column(type: 'string', length: 255)]
     private $title;
 
-    #[ORM\Column(type: 'datetime_immutable')]
+    #[ORM\Column(type: 'datetime_immutable', options:['default' =>
+    'CURRENT_TIMESTAMP'])]
     private $createdAt;
 
     #[ORM\Column(type: 'string', length: 255)]
