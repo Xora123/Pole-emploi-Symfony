@@ -24,29 +24,21 @@ class PostController extends AbstractController
         ]);
     }
     #[Route('post/{id}/delete', name: 'app_delete', methods: ['GET', 'POST'])]
-    public function delete(Post $post, EntityManagerInterface $em): RedirectResponse
+    public function delete(Post $post, EntityManagerInterface $em):RedirectResponse
     {
         $em->remove($post);
         $em->flush();
 
-        return $this->redirectToRoute(route: "app_home");
+        return $this->redirectToRoute(route : "app_home");
     }
 
-    #[Route("post/{id}/edit", name: 'app_edit', methods: ['GET', 'POST'])]
-    public function edit(Post $post, Request $request, EntityManagerInterface $em): Response
+    public function add()
     {
-        $form = $this->createForm(PostType::class, $post);
-        $form->handleRequest($request);
+        $article = new Post();
+        $form = $this->createForm(ArticleType::class, $article);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            
-            $em->persist($post);
-            $em->flush();
-            return $this->redirectToRoute('app_home');
-        }
-        return $this->render('post/edit.html.twig', [
-            'form' => $form->createView(),
-
+        return $this->render('blog/add.html.twig', [
+            'form' => $form->createView()
         ]);
     }
 }
