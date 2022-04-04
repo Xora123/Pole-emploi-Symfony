@@ -20,6 +20,7 @@ class PostType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+
             ->add('title', TextType::class, [
                 'attr' => [
                     'class' => 'form-control',
@@ -44,6 +45,7 @@ class PostType extends AbstractType
                 ],
                 'label' => 'Contenue du poste',
             ])
+
             ->add('type', ChoiceType::class, [
                 'expanded' => true,
                 'choices' => [
