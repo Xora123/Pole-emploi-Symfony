@@ -14,7 +14,7 @@ class HomeController extends AbstractController
 {
 
     #[Route('/', name: 'app_home')]
-    public function index(PostRepository $postRepository, PaginatorInterface $paginator, Request $request): Response
+    public function index(PostRepository $postRepository PaginatorInterface $): Response
     {
         $posts = $postRepository->findBy([],['createdAt' => 'desc']);
 
