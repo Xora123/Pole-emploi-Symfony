@@ -26,13 +26,10 @@
 					<label for="inputPassword">Mot de passe</label>
 					<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
-					<input
-					type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-					<button class="btn btn-lg btn-primary mt-3" type="submit">
-						Me connecter
-					</button>
+					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+					<button class="btn btn-lg btn-primary mt-3" type="submit">Me connecter</button>
 					<a href="{{ path('app_register') }}" class="btn btn-secondary mt-3">M'inscrire</a>
+
 
 				</form>
 
