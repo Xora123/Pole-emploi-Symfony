@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Reponse;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class ReponseCrudController extends AbstractCrudController
@@ -12,14 +13,12 @@ class ReponseCrudController extends AbstractCrudController
         return Reponse::class;
     }
 
-    /*
+
+
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            TextEditorField::new('content'),
         ];
     }
-    */
 }
